@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: url(https://e0.pxfuel.com/wallpapers/44/1/desktop-wallpaper-blue-geometric-technology-honeycomb-background-blue-technology-blue-black-background-for-dark-blue-geometric.jpg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        min-height: 100vh;
+      }
+      header {
+        margin: 30px auto;
+        width: 400px;
+        background-color: white;
+        padding: 10px 20px;
+        box-sizing: border-box;
+      }
+      h1 {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin-left: 10px;
+        color: rgb(23, 149, 23);
+      }
+      h3 {
+        color: rgb(38, 15, 129);
+      }
+      h4 {
+        color: rgb(172, 130, 6);
+        border-bottom: 1px solid black;
+      }
+      span {
+        font-size: 1.8rem;
+        margin-left: 15px;
+      }
+      .money {
+        font-size: 20px;
+        margin: 20px 0;
+      }
+      .money.plus {
+        color: rgb(12, 196, 12);
+      }
+      .money.minus {
+        color: rgb(243, 76, 16);
+      }
+
+      .inc-exp-amount {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: rgb(9, 225, 211);
+        margin: 20px 0;
+        box-shadow: 0 3px 4px 1px black;
+      }
+      .inc-exp-amount > div {
+        flex: 1;
+        text-align: center;
+      }
+      .inc-exp-amount > div:first-of-type {
+        border-right: 2px solid black;
+      }
+      .btn {
+        cursor: pointer;
+        background-color: black;
+        box-shadow: purple;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 20px 0;
+        padding: 10px 0;
+        width: 100%;
+      }
+      .btn:hover {
+        background-color: white;
+        color: black;
+      }
+      label {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      input[type="text"],
+      input[type="number"] {
+        border: 1px solid black;
+        border-radius: 5px;
+        display: block;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .list {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 40px 0;
+      }
+      .list li {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        display: flex;
+        position: relative;
+        font-size: 1.5rem;
+        justify-content: space-between;
+        padding: 10px 10px;
+        margin: 10px 0;
+      }
+      .list li.plus {
+        border-right: 5px solid forestgreen;
+      }
+      .list li.minus {
+        border-right: 5px solid crimson;
+      }
+      .delete-btn {
+        cursor: pointer;
+        background-color: wheat;
+        font-size: 20px;
+        padding: 2px 5px;
+        position: absolute;
+        left: 0;
+        transform: translate(-100%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+      .list li:hover .delete-btn {
+        opacity: 1;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Expense Tracker</h1>
+    <header>
+      <h2>Your Balance</h2>
+      <span id="balance">$0.00</span>
+      <div class="inc-exp-amount">
+        <div>
+          <h3>Income</h3>
+          <p id="money-plus" class="money plus">+$0.00</p>
+        </div>
+
+        <div class="exp-amount">
+          <h3>Expense</h3>
+          <p id="money-minus" class="money minus">-$0.00</p>
+        </div>
+      </div>
+      <h4>History</h4>
+      <ul id="list" class="list"></ul>
+      <h4>add new transaction</h4>
+      <form action="" id="form">
+        <div class="form-control">
+          <label for="text">Text</label>
+          <input
+            type="text"
+            id="text"
+            placeholder=" Please enter the text..."
+          />
+        </div>
+        <div class="form-control">
+          <label for="amount"
+            >Amount <br />(negative = Expense, positive = income)</label
+          >
+          <input
+            type="number"
+            id="amount"
+            placeholder="Please enter the amount"
+          />
+        </div>
+        <button class="btn">Add transaction</button>
+      </form>
+    </header>
+
+    <script src="main.js"></script>
+  </body>
+</html>
